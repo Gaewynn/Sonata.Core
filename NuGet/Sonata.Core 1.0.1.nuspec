@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Sonata.Core</id>
+    <version>$version$</version>
+    <title>Sonata.Core</title>
+    <authors>gaewynn</authors>
+    <owners>Sonata</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Gaewynn/Sonata.Core</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gaewynn/Sonata.Core/master/NuGet/sonata-core.png</iconUrl>
+    <description>Sonata.Core</description>
+    <summary></summary>
+    <copyright>Copyright @ 2018 Sonata</copyright>
+	<tags>gaewynn sonata core</tags>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\Sonata.Core\bin\$configuration$\netstandard2.0\Sonata.Core.dll" target="Sonata.Core.dll" />
+  </files>
+</package>
