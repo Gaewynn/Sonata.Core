@@ -1,12 +1,8 @@
 ﻿#region Namespace
-//	TODO: comment
+//	TODO
 #endregion
 
-#if NET45
-namespace QimLib.Net45.Core.Extensions
-#else
-namespace QimLib.Core.Extensions
-#endif
+namespace Sonata.Core.Extensions
 {
 	public static class IntExtension
 	{

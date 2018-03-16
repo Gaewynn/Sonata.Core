@@ -5,7 +5,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using QimLib.Core.Extensions;
 
 namespace Sonata.Core.Extensions
 {

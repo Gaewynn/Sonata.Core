@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using QimLib.Core.Extensions;
 using Sonata.Core.Extensions;
 
 namespace Sonata.Core.Collections.Generic
