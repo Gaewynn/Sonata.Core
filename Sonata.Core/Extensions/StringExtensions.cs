@@ -24,6 +24,13 @@ namespace Sonata.Core.Extensions
 
 		#region Methods
 
+		public static string Quote(this string instance)
+		{
+			return instance == null 
+				? null : 
+				$"'{instance}'";
+		}
+
 		public static string ToBase64(this string instance)
 		{
 			if (instance == null)
@@ -46,14 +53,14 @@ namespace Sonata.Core.Extensions
 			if (instance == null)
 				throw new ArgumentNullException(nameof(instance));
 
-			instance = instance.Replace('-', '+');		// 62nd char of encoding
-			instance = instance.Replace('_', '/');		// 63rd char of encoding
+			instance = instance.Replace('-', '+');      // 62nd char of encoding
+			instance = instance.Replace('_', '/');      // 63rd char of encoding
 
-			switch (instance.Length % 4)				// Pad with trailing '='s
+			switch (instance.Length % 4)                // Pad with trailing '='s
 			{
-				case 0: break;							// No pad chars in this case
-				case 2: instance += "=="; break;		// Two pad chars
-				case 3: instance += "="; break;			// One pad char
+				case 0: break;                          // No pad chars in this case
+				case 2: instance += "=="; break;        // Two pad chars
+				case 3: instance += "="; break;         // One pad char
 				default:
 					throw new InvalidOperationException("Illegal base64url string!");
 			}
@@ -66,9 +73,9 @@ namespace Sonata.Core.Extensions
 			if (instance == null)
 				throw new ArgumentNullException(nameof(instance));
 
-			instance = instance.Split('=')[0];			// Remove any trailing '='s
-			instance = instance.Replace('+', '-');		// 62nd char of encoding
-			instance = instance.Replace('/', '_');		// 63rd char of encoding
+			instance = instance.Split('=')[0];          // Remove any trailing '='s
+			instance = instance.Replace('+', '-');      // 62nd char of encoding
+			instance = instance.Replace('/', '_');      // 63rd char of encoding
 
 			return instance;
 		}
@@ -177,22 +184,22 @@ namespace Sonata.Core.Extensions
 
 		public static bool EqualsAi(this string instance, string value, bool trim = false, char[] trimChar = null, bool removeDoubleSpaces = false)
 		{
-			return !trim && !removeDoubleSpaces 
-				? StringAiComparer.Instance.Equals(instance, value) 
+			return !trim && !removeDoubleSpaces
+				? StringAiComparer.Instance.Equals(instance, value)
 				: new StringAiComparer(trim, trimChar, removeDoubleSpaces).Equals(instance, value);
 		}
 
 		public static bool EqualsCi(this string instance, string value, bool trim = false, char[] trimChar = null, bool removeDoubleSpaces = false)
 		{
-			return !trim && !removeDoubleSpaces 
-				? StringCiComparer.Instance.Equals(instance, value) 
+			return !trim && !removeDoubleSpaces
+				? StringCiComparer.Instance.Equals(instance, value)
 				: new StringCiComparer(trim, trimChar, removeDoubleSpaces).Equals(instance, value);
 		}
 
 		public static bool EqualsCiAi(this string instance, string value, bool trim = false, char[] trimChar = null, bool removeDoubleSpaces = false)
 		{
-			return !trim && !removeDoubleSpaces 
-				? StringCiAiComparer.Instance.Equals(instance, value) 
+			return !trim && !removeDoubleSpaces
+				? StringCiAiComparer.Instance.Equals(instance, value)
 				: new StringCiAiComparer(trim, trimChar, removeDoubleSpaces).Equals(instance, value);
 		}
 
@@ -330,6 +337,6 @@ namespace Sonata.Core.Extensions
 			return instance;
 		}
 
-#endregion
+		#endregion
 	}
 }
