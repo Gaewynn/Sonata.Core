@@ -96,7 +96,7 @@ namespace Sonata.Core.Extensions
 				else
 					newKey = new byte[16];
 
-				Buffer.BlockCopy(key, 0, newKey, 0, key.Length);
+				Buffer.BlockCopy(key, 0, newKey, 0, newKey.Length);
 				key = newKey;
 			}
 
@@ -147,7 +147,7 @@ namespace Sonata.Core.Extensions
 				else
 					newKey = new byte[16];
 
-				Buffer.BlockCopy(key, 0, newKey, 0, key.Length);
+				Buffer.BlockCopy(key, 0, newKey, 0, newKey.Length);
 				key = newKey;
 			}
 
