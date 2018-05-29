@@ -31,6 +31,13 @@ namespace Sonata.Core.Extensions
 				$"'{instance}'";
 		}
 
+		public static string DoubleQuote(this string instance)
+		{
+			return instance == null
+				? null :
+				$"\"{instance}\"";
+		}
+
 		public static string ToBase64(this string instance)
 		{
 			if (instance == null)
