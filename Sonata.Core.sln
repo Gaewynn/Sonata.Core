@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sonata.Core", "Sonata.Core\Sonata.Core.csproj", "{30F28697-A8AF-4E88-AEA5-5AAEFE445009}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{D4800473-3188-44B8-AFE7-25A2108D1ECD}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\Build.bat = NuGet\Build.bat
+		NuGet\sonata-core.png = NuGet\sonata-core.png
+		NuGet\Sonata.Core 1.0.6.nuspec = NuGet\Sonata.Core 1.0.6.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
