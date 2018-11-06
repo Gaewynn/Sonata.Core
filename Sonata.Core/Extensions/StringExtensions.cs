@@ -227,6 +227,20 @@ namespace Sonata.Core.Extensions
 					.GetValue(null);
 		}
 
+		public static TEnum GetEnumStringValueOrDefault<TEnum>(this string instance, TEnum defaultValue) where TEnum : struct
+		{
+			var t = typeof(TEnum)
+				.GetFields()
+				.FirstOrDefault(f => f.GetCustomAttributes(typeof(StringValueAttribute), false)
+					.Cast<StringValueAttribute>()
+					.Any(a => a.Value.Equals(instance, StringComparison.OrdinalIgnoreCase)));
+
+			if (t == null)
+				return defaultValue;
+
+			return (TEnum)t.GetValue(null);
+		}
+
 		public static string ToValidFileName(this string instance, Dictionary<string, string> replacers = null)
 		{
 			if (instance == null)
