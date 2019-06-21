@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sonata.Core", "Sonata.Core\Sonata.Core.csproj", "{30F28697-A8AF-4E88-AEA5-5AAEFE445009}"
 EndProject
@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{D4800473
 	ProjectSection(SolutionItems) = preProject
 		NuGet\Build.bat = NuGet\Build.bat
 		NuGet\sonata-core.png = NuGet\sonata-core.png
-		NuGet\Sonata.Core 1.0.8.nuspec = NuGet\Sonata.Core 1.0.8.nuspec
+		NuGet\Sonata.Core 1.0.9.nuspec = NuGet\Sonata.Core 1.0.9.nuspec
 	EndProjectSection
 EndProject
 Global
