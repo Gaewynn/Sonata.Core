@@ -321,6 +321,11 @@ namespace Sonata.Core
                 Add(log);
         }
 
+        public List<string> GetAllLogsMessages()
+        {
+            return GetLogsMessages(Enum.GetValues(typeof(LogLevel)).Cast<LogLevel>().ToArray());
+        }
+
         public List<string> GetLogsMessages(params LogLevel[] filters)
         {
             var messages = new List<string>();
@@ -663,6 +668,11 @@ namespace Sonata.Core
 
             foreach (var log in logs)
                 Add(log);
+        }
+
+        public List<string> GetAllLogsMessages()
+        {
+            return GetLogsMessages(Enum.GetValues(typeof(LogLevel)).Cast<LogLevel>().ToArray());
         }
 
         public List<string> GetLogsMessages(params LogLevel[] filters)
