@@ -189,6 +189,59 @@ namespace Sonata.Core.Extensions
 			return Base64UrlEncode(Convert.ToBase64String(cipherBytes));
 		}
 
+		public static string DecryptRSA(this string instance, string privateKey, bool decodeInputFromBase64 = true, bool fOAEP = false, Encoding encoding = null)
+		{
+			using (var rsa = new RSACryptoServiceProvider(1024))
+			{
+				try
+				{
+					encoding = encoding ?? Encoding.UTF8;
+
+					if (decodeInputFromBase64)
+					{
+						instance = instance.FromBase64();
+					}
+
+					rsa.FromXmlString(privateKey);
+
+					var inputBytes = encoding.GetBytes(instance);
+					var decryptedBytes = rsa.Decrypt(inputBytes, fOAEP);
+					var decryptedInput = encoding.GetString(decryptedBytes);
+
+					return decryptedInput;
+				}
+				finally
+				{
+					rsa.PersistKeyInCsp = false;
+				}
+			}
+		}
+
+		public static string EncryptRSA(this string instance, string publicKey, bool encodeResultInBase64 = true, bool fOAEP = false, Encoding encoding = null)
+		{
+			using (var rsa = new RSACryptoServiceProvider(1024))
+			{
+				try
+				{
+					encoding = encoding ?? Encoding.UTF8;
+
+					rsa.FromXmlString(publicKey);
+
+					var inputBytes = encoding.GetBytes(instance);
+					var encryptedData = rsa.Encrypt(inputBytes, fOAEP);
+					var encryptedInput = encodeResultInBase64
+						? Convert.ToBase64String(encryptedData)
+						: encoding.GetString(encryptedData);
+
+					return encryptedInput;
+				}
+				finally
+				{
+					rsa.PersistKeyInCsp = false;
+				}
+			}
+		}
+
 		public static bool EqualsAi(this string instance, string value, bool trim = false, char[] trimChar = null, bool removeDoubleSpaces = false)
 		{
 			return !trim && !removeDoubleSpaces
